@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
+@using (Html.BeginForm("AddUser", "Login", FormMethod.Post))
+{
+    <div class="form-control">
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br />
+        @Html.Label("Kullanıcı Şifresi")
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password)
+        <br />
+        @Html.Label("Cinsiyet")
+        @Html.TextBoxFor(x => x.Gender, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </div>
+}
+

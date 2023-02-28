@@ -1,0 +1,43 @@
+﻿@using EntityLayer.Concrete
+@model List<Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Ürünler</h1>
+<br />
+@using (Html.BeginForm("GetAllProduct", "AdminProduct", FormMethod.Post))
+{
+    <p>Aranacak Kelimeyi Girin: @Html.TextBox("p")</p>
+    <input type="submit" value="Ara" />
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Kategoriler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.Description</td>
+            <td>@item.Price</td>
+            <td>@item.Category.CategoryName</td>
+            <td><a href="/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/AdminProduct/EditProduct/@item.ProductId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/AdminCategory/Index" class="btn btn-primary">Kategoriler</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminProduct/AddProduct" class="btn btn-info">Ekle</a>
+
+

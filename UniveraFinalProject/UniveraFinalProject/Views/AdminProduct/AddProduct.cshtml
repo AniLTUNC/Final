@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürün Ekleme Sayfası</h1>
+
+<br />
+@using (Html.BeginForm("AddProduct", "AdminProduct", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Ürün Adı")
+        @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProductName)
+        <br />
+        @Html.Label("Ürün Açıklaması")
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Description)
+        <br />
+        @Html.Label("Ürün Fiyatı")
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Price)
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br /><br />
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+}
+
