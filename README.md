@@ -7,3 +7,6 @@ BusinessLayer katmanında methodlar yazıldı yine bu katmandaki ValidationRules
 UniveraFinalProject UI kısmı burada controller ve view kısımları yazıldı ayrıca admin için role belirleme işlemş roles klasörü altında kısmında yapıldı.
 
 Proje çalışınca ilk açılan sayfa admin sayfasıdır kullanıcı olarak giriş yapmak için aşağıdaki kullanıcı kısmına tıklamak gerekir proje de admn yalnızca veritabanından eklenirken user her UserLogin ekranında kayıt ol kısmından eklenebilir. 
+
+
+!!girişteki dosyaları UniveraFinalProject yazan klasörün içine atınız.!!
